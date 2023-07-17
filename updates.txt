@@ -1,0 +1,1 @@
+This file holds update strings for Luna's database
