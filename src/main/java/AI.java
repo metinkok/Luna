@@ -175,7 +175,7 @@ Answer()
 				CONTEXT = "Rule";
 			}
 		}
-		else if(s.contains(" or ")){
+		else if((s.contains(" or ")) && (s.contains("Choose"))){
 			Random random = new Random();
 			int number = random.nextInt(2);
 			if(number == 1)
@@ -266,7 +266,24 @@ Answer()
 					}
 				}
 				if (cevap == null) {
-					answer.setText("I can not answer that");
+					if(s.indexOf("Perhaps") == 0)
+						answer.setText("Don't you know?");
+					else if(s.indexOf("Yes, ") == 0)
+						answer.setText("And how do you feel about this?");
+					else if(s.indexOf("No, ") == 0)
+						answer.setText("Why don't you tell me more about this?");
+					else if(s.contains("I am confused"))
+						answer.setText("Are you here because you are confused?");
+					else if(s.contains("I want "))
+						answer.setText("How long have you wanted that?");
+					else if((s.contains("I am saying ") || (s.contains("I said "))))
+						answer.setText("Do you know anyone else who said that?");
+					else if(s.contains("because "))
+						answer.setText("Does that reason seem to explain anything else?");
+					else if(s.indexOf("I guess") == 0 || s.contains("My guess "))
+						answer.setText("Aren't you sure?");
+					else
+						answer.setText("Can you tell me more about this?");
 					sql = "insert into Res (input_in, context, res_out, mood) values(\'" + s + "\', \'" + CONTEXT + "\', \'\', \'" + mood + "\');";
 					File file = new File("updates.txt");
 					BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
