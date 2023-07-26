@@ -62,7 +62,6 @@ private class Handler implements ActionListener
 			filename=name.getText();
 			File file=new File(filename+".txt");
 			BufferedWriter writer=new BufferedWriter(new FileWriter(file,true));
-			//yes no button no system.exit(0); yes do nothing
 			String encode=writed.getText();
 			String temp="";
 			while(encode.length()!=0)

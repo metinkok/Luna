@@ -274,6 +274,8 @@ Answer()
 						answer.setText("Why don't you tell me more about this?");
 					else if(s.contains("I am confused"))
 						answer.setText("Are you here because you are confused?");
+					else if(s.contains("I am nervous"))
+						answer.setText("Do you want to talk about it?");
 					else if(s.contains("I want "))
 						answer.setText("How long have you wanted that?");
 					else if((s.contains("I am saying ") || (s.contains("I said "))))
