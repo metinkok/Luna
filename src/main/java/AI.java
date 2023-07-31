@@ -187,7 +187,7 @@ Answer()
 			String cmd = s.substring(s.indexOf("run \"")+5, s.lastIndexOf('\"'));
 			Terminal terminal = new Terminal(cmd);
 		}
-		else if(s.contains("set up the mood =")){
+		else if((s.contains("set up the mood =")) || (s.contains("Set up the mood ="))){
 			String playlist = s.substring(s.indexOf('=')+2);
 			answer.setText(playlist);
 			String cmd = "cmd /c C:\\Users\\"+user+"\\Music\\Playlists\\"+playlist+".wpl";
@@ -284,6 +284,8 @@ Answer()
 						answer.setText("Does that reason seem to explain anything else?");
 					else if(s.indexOf("I guess") == 0 || s.contains("My guess "))
 						answer.setText("Aren't you sure?");
+					else if(s.contains("You")  || s.contains("you"))
+						answer.setText("You are not actually talking about me aren't you?");
 					else
 						answer.setText("Can you tell me more about this?");
 					sql = "insert into Res (input_in, context, res_out, mood) values(\'" + s + "\', \'" + CONTEXT + "\', \'\', \'" + mood + "\');";
