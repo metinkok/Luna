@@ -118,7 +118,7 @@ TicTacToe(String user){
 		if((buttons[0][0].getText().contentEquals(buttons[1][1].getText()))&&(buttons[0][0].getText().contentEquals(buttons[2][2].getText()))) {
 			return true;
 		}
-		else if((buttons[0][2].getText().contentEquals(buttons[1][1].getText()))&&(buttons[0][0].getText().contentEquals(buttons[2][0].getText()))) {
+		else if((buttons[0][2].getText().contentEquals(buttons[1][1].getText()))&&(buttons[0][2].getText().contentEquals(buttons[2][0].getText()))) {
 			return true;
 		}
 		return false;
