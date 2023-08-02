@@ -317,7 +317,10 @@ Answer()
 				counter ++;
 			}
 			String cmd = "cmd /c E:\\MovieNight\\"+mv+".mp4";
-			System.out.println(cmd);
+			Terminal terminal = new Terminal(cmd);
+		}
+		else if(answer.getText().equals("Let me check it.") || answer.getText().equals("Let me check it, with my camera.")){
+			String cmd = "cmd.exe /c start microsoft.windows.camera:";
 			Terminal terminal = new Terminal(cmd);
 		}
 		if(ps!=null) {cm.closePreparedStatement(ps);}
